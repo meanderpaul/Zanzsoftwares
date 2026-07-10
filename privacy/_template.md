@@ -43,4 +43,4 @@ We may update this Privacy Policy from time to time. The “Last updated” date
 
 ## 9. Contact
 
-**Email:** support@example.com
+**Email:** zanzsoftwares@gmail.com

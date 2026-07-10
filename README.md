@@ -13,3 +13,5 @@ https://github.com/meanderpaul/Zanzsoftwares/blob/main/privacy/classics-arcade.m
 2. Fill in the placeholders
 3. Add a link in this README
 4. Commit & push
+
+Support contact: zanzsoftwares@gmail.com

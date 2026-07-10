@@ -60,8 +60,6 @@ We may update this Privacy Policy from time to time. The “Last updated” date
 
 Questions about this Privacy Policy or the App:
 
-**Email:** support@example.com
-
-*(Replace with your real support email before Play Store submission.)*
+**Email:** zanzsoftwares@gmail.com
 
 Developer / publisher: Classics Arcade (`com.zanz.classicsarcade`)
