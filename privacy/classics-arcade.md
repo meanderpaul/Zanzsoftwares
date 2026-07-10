@@ -1,7 +1,7 @@
 # Privacy Policy — Classics Arcade
 
 **App:** Classics Arcade  
-**Package:** `com.zanz.classicsarcade`  
+**Package:** `com.zanzarcade.app`  
 **Last updated:** July 10, 2026
 
 This Privacy Policy describes how Classics Arcade (“the App”, “we”, “us”) handles information when you use the Android app published on Google Play.
@@ -62,4 +62,4 @@ Questions about this Privacy Policy or the App:
 
 **Email:** zanzsoftwares@gmail.com
 
-Developer / publisher: Classics Arcade (`com.zanz.classicsarcade`)
+Developer / publisher: Classics Arcade (`com.zanzarcade.app`)
