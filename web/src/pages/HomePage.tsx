@@ -1,6 +1,18 @@
+import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
-import { apps } from '../data/apps'
+import { apps, type AppInfo } from '../data/apps'
 import { PlayButton } from '../components/PlayButton'
+
+function privacyLink(app: AppInfo) {
+  if (app.privacyUrl) {
+    return (
+      <a href={app.privacyUrl} target="_blank" rel="noreferrer">
+        Privacy policy
+      </a>
+    )
+  }
+  return <Link to={`/privacy/${app.slug}`}>Privacy policy</Link>
+}
 
 export function HomePage() {
   return (
@@ -10,7 +22,7 @@ export function HomePage() {
         <h1 className="hero-brand">Zanz Softwares</h1>
         <p className="hero-lead">
           Small apps built for real use — arcade sessions at home, scorekeeping
-          on the range, and whatever comes next.
+          on the range, peak challenges on the trail, and whatever comes next.
         </p>
         <div className="hero-actions">
           <button
@@ -32,20 +44,31 @@ export function HomePage() {
           Each listing has a short overview, privacy policy, and Play Store link
           when available.
         </p>
-        <ul className="app-list">
+        <ul className="card-grid">
           {apps.map((app) => (
-            <li key={app.slug} className="app-row">
-              <div className="app-copy">
+            <li
+              key={app.slug}
+              className="app-card"
+              style={{ '--card-accent': app.accent } as CSSProperties}
+            >
+              <Link
+                to={`/apps/${app.slug}`}
+                className="card-art"
+                aria-label={`${app.name} details`}
+              >
+                <span className="card-initials">{app.initials}</span>
+              </Link>
+              <div className="card-body">
                 <h3>
                   <Link to={`/apps/${app.slug}`}>{app.name}</Link>
                 </h3>
                 <p>{app.tagline}</p>
-                <div className="app-links">
+                <div className="card-links">
                   <Link to={`/apps/${app.slug}`}>Details</Link>
-                  <Link to={`/privacy/${app.slug}`}>Privacy policy</Link>
+                  {privacyLink(app)}
                 </div>
+                <PlayButton url={app.playStoreUrl} />
               </div>
-              <PlayButton url={app.playStoreUrl} />
             </li>
           ))}
         </ul>

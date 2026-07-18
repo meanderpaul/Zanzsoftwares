@@ -6,7 +6,12 @@ export type AppInfo = {
   features: string[]
   /** Google Play listing URL, or null while unpublished */
   playStoreUrl: string | null
-  privacyPath: string
+  /** External privacy policy URL; when omitted the site renders privacy/<slug>.md */
+  privacyUrl?: string
+  /** Accent color used for the card and detail page */
+  accent: string
+  /** Short label shown on the card art block */
+  initials: string
 }
 
 export const apps: AppInfo[] = [
@@ -22,7 +27,8 @@ export const apps: AppInfo[] = [
       'Optional ads with a clean play-first layout',
     ],
     playStoreUrl: null,
-    privacyPath: 'privacy/classics-arcade.md',
+    accent: '#b3541e',
+    initials: 'CA',
   },
   {
     slug: 'archerypal',
@@ -37,7 +43,25 @@ export const apps: AppInfo[] = [
       'Works offline with local peer connections',
     ],
     playStoreUrl: null,
-    privacyPath: 'privacy/archerypal.md',
+    accent: '#2f6b4f',
+    initials: 'AP',
+  },
+  {
+    slug: 'strato-altus',
+    name: 'Strato Altus',
+    tagline: 'Hiking and peak challenges with your community.',
+    description:
+      'Log hikes and summits, verify them with photos, and climb leaderboards through peak challenges. Track your progress, earn badges, and share contest photos with other hikers.',
+    features: [
+      'Peak and hike logging with verification',
+      'Challenges, badges, and leaderboards',
+      'Photo contests and community stats',
+      'No ads, no third-party analytics',
+    ],
+    playStoreUrl: null,
+    privacyUrl: 'https://meanderpaul.github.io/Strato-altus/privacy-policy.html',
+    accent: '#3b5b92',
+    initials: 'SA',
   },
 ]
 

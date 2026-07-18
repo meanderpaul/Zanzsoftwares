@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getApp } from '../data/apps'
 import { PlayButton } from '../components/PlayButton'
@@ -16,10 +17,16 @@ export function AppPage() {
   }
 
   return (
-    <main className="page">
+    <main
+      className="page app-detail"
+      style={{ '--card-accent': app.accent } as CSSProperties}
+    >
       <p className="crumb">
         <Link to="/">Home</Link> / {app.name}
       </p>
+      <div className="detail-banner">
+        <span className="card-initials">{app.initials}</span>
+      </div>
       <h1>{app.name}</h1>
       <p className="tagline">{app.tagline}</p>
       <p>{app.description}</p>
@@ -30,9 +37,20 @@ export function AppPage() {
       </ul>
       <div className="page-actions">
         <PlayButton url={app.playStoreUrl} />
-        <Link className="btn btn-ghost" to={`/privacy/${app.slug}`}>
-          Privacy policy
-        </Link>
+        {app.privacyUrl ? (
+          <a
+            className="btn btn-ghost"
+            href={app.privacyUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Privacy policy
+          </a>
+        ) : (
+          <Link className="btn btn-ghost" to={`/privacy/${app.slug}`}>
+            Privacy policy
+          </Link>
+        )}
       </div>
     </main>
   )

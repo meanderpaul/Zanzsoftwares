@@ -33,7 +33,9 @@ body {
   min-height: 100vh;
   background:
     radial-gradient(ellipse 80% 50% at 10% -10%, #c8ddd0 0%, transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, #d5cfc4 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, #e3d3bd 0%, transparent 50%),
+    radial-gradient(ellipse 70% 45% at 0% 70%, #ccd6e6 0%, transparent 55%),
+    radial-gradient(ellipse 55% 40% at 100% 95%, #e0cfc2 0%, transparent 50%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
   background-attachment: fixed;
 }
@@ -165,51 +167,96 @@ p {
   margin-bottom: 1.75rem;
 }
 
-.app-list {
+.card-grid {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.app-card {
+  --card-accent: var(--accent);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fdfefd;
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 10px rgba(24, 32, 27, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.app-row {
+.app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(24, 32, 27, 0.12);
+}
+
+.card-art {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem 1.5rem;
-  padding: 1.35rem 0;
-  border-top: 1px solid var(--line);
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  text-decoration: none;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.35), transparent 45%),
+    linear-gradient(135deg, var(--card-accent), color-mix(in srgb, var(--card-accent) 55%, #18201b));
 }
 
-.app-row:last-child {
-  border-bottom: 1px solid var(--line);
+.card-initials {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.92);
 }
 
-.app-copy h3 {
-  font-size: 1.35rem;
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.15rem;
+  padding: 1.1rem 1.2rem 1.25rem;
+  border-top: 3px solid var(--card-accent);
 }
 
-.app-copy h3 a {
+.card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-body h3 a {
   color: var(--ink);
   text-decoration: none;
 }
 
-.app-copy h3 a:hover {
-  color: var(--accent);
+.card-body h3 a:hover {
+  color: var(--card-accent);
 }
 
-.app-copy p {
-  margin-bottom: 0.65rem;
-  max-width: 34rem;
+.card-body p {
+  margin-bottom: 0.85rem;
 }
 
-.app-links {
+.card-links {
   display: flex;
   gap: 1rem;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.card-links a {
+  color: var(--card-accent);
+}
+
+.card-links a:hover {
+  color: var(--ink);
+}
+
+.card-body .btn {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .btn {
@@ -275,6 +322,31 @@ p {
 .page {
   padding: 2rem 0 3rem;
   animation: rise 0.6s ease both;
+}
+
+.app-detail {
+  --card-accent: var(--accent);
+}
+
+.detail-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.35), transparent 45%),
+    linear-gradient(135deg, var(--card-accent), color-mix(in srgb, var(--card-accent) 55%, #18201b));
+}
+
+.detail-banner .card-initials {
+  font-size: 2.6rem;
+}
+
+.app-detail .tagline {
+  color: var(--card-accent);
+  font-weight: 600;
 }
 
 .page h1 {
