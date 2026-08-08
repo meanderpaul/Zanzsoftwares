@@ -51,6 +51,11 @@ export function AppPage() {
             Privacy policy
           </Link>
         )}
+        {app.hasAccountDeletion ? (
+          <Link className="btn btn-ghost" to={`/delete/${app.slug}`}>
+            Delete account
+          </Link>
+        ) : null}
       </div>
     </main>
   )

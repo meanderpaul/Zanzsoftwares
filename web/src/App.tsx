@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { HomePage } from './pages/HomePage'
 import { AppPage } from './pages/AppPage'
 import { PrivacyPage } from './pages/PrivacyPage'
+import { DeletePage } from './pages/DeletePage'
 import { Layout } from './components/Layout'
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path="apps/:slug" element={<AppPage />} />
         <Route path="privacy/:slug" element={<PrivacyPage />} />
+        <Route path="delete/:slug" element={<DeletePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

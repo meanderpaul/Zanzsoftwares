@@ -2,10 +2,12 @@ import { Link, useParams } from 'react-router-dom'
 import { getApp } from '../data/apps'
 import classicsArcade from '@privacy/classics-arcade.md?raw'
 import archerypal from '@privacy/archerypal.md?raw'
+import stratoAltus from '@privacy/strato-altus.md?raw'
 
 const privacyBySlug: Record<string, string> = {
   'classics-arcade': classicsArcade,
   archerypal: archerypal,
+  'strato-altus': stratoAltus,
 }
 
 function renderMarkdownLite(md: string): string {
@@ -14,13 +16,18 @@ function renderMarkdownLite(md: string): string {
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
     .replace(/^# (.+)$/gm, '<h1>$1</h1>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(
-      /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" target="_blank" rel="noreferrer">$1</a>',
-    )
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label: string, href: string) => {
+      const external = /^https?:\/\//i.test(href)
+      const attrs = external ? ' target="_blank" rel="noreferrer"' : ''
+      return `<a href="${href}"${attrs}>${label}</a>`
+    })
     .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>\n?)+/g, (block) => `<ul>${block}</ul>`)
-    .replace(/^(?!<[hul]|<li)(.+)$/gm, '<p>$1</p>')
+    .replace(/^\d+\. (.+)$/gm, '<li data-ordered="1">$1</li>')
+    .replace(/(<li(?![^>]*data-ordered).*?<\/li>\n?)+/g, (block) => `<ul>${block}</ul>`)
+    .replace(/(<li data-ordered="1">.*?<\/li>\n?)+/g, (block) =>
+      `<ol>${block.replace(/ data-ordered="1"/g, '')}</ol>`,
+    )
+    .replace(/^(?!<[hul]|<li|<ol|<ul)(.+)$/gm, '<p>$1</p>')
     .replace(/<p><\/p>/g, '')
 }
 
@@ -48,6 +55,13 @@ export function PrivacyPage() {
         className="policy"
         dangerouslySetInnerHTML={{ __html: renderMarkdownLite(markdown) }}
       />
+      {app.hasAccountDeletion ? (
+        <div className="page-actions" style={{ marginTop: '1.75rem' }}>
+          <Link className="btn btn-ghost" to={`/delete/${app.slug}`}>
+            Account & data deletion
+          </Link>
+        </div>
+      ) : null}
     </main>
   )
 }

@@ -38,8 +38,16 @@ In `web/src/data/apps.ts`, set `playStoreUrl` from `null` to your listing URL wh
 |-----|----------|----------------------------------|
 | Classics Arcade | [privacy/classics-arcade.md](privacy/classics-arcade.md) | `/#/privacy/classics-arcade` |
 | Archerypal | [privacy/archerypal.md](privacy/archerypal.md) | `/#/privacy/archerypal` |
+| Strato Altus | [privacy/strato-altus.md](privacy/strato-altus.md) | `/#/privacy/strato-altus` |
+
+Account deletion (apps with server accounts):
+
+| App | Site route |
+|-----|------------|
+| Strato Altus | `/#/delete/strato-altus` |
 
 GitHub blob URLs still work for Play Console if you prefer:
 
 - https://github.com/meanderpaul/Zanzsoftwares/blob/main/privacy/classics-arcade.md
 - https://github.com/meanderpaul/Zanzsoftwares/blob/main/privacy/archerypal.md
+- https://github.com/meanderpaul/Zanzsoftwares/blob/main/privacy/strato-altus.md

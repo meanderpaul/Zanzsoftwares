@@ -14,6 +14,11 @@ function privacyLink(app: AppInfo) {
   return <Link to={`/privacy/${app.slug}`}>Privacy policy</Link>
 }
 
+function deleteLink(app: AppInfo) {
+  if (!app.hasAccountDeletion) return null
+  return <Link to={`/delete/${app.slug}`}>Delete account</Link>
+}
+
 export function HomePage() {
   return (
     <main>
@@ -66,6 +71,7 @@ export function HomePage() {
                 <div className="card-links">
                   <Link to={`/apps/${app.slug}`}>Details</Link>
                   {privacyLink(app)}
+                  {deleteLink(app)}
                 </div>
                 <PlayButton url={app.playStoreUrl} />
               </div>

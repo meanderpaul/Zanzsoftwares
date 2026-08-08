@@ -8,6 +8,8 @@ export type AppInfo = {
   playStoreUrl: string | null
   /** External privacy policy URL; when omitted the site renders privacy/<slug>.md */
   privacyUrl?: string
+  /** When true, the catalog links to /#/delete/<slug> for account deletion */
+  hasAccountDeletion?: boolean
   /** Accent color used for the card and detail page */
   accent: string
   /** Short label shown on the card art block */
@@ -59,7 +61,7 @@ export const apps: AppInfo[] = [
       'No ads, no third-party analytics',
     ],
     playStoreUrl: null,
-    privacyUrl: 'https://meanderpaul.github.io/Strato-altus/privacy-policy.html',
+    hasAccountDeletion: true,
     accent: '#3b5b92',
     initials: 'SA',
   },
