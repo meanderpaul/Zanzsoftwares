@@ -25,11 +25,12 @@ export function HomePage() {
   return (
     <main>
       <section className="hero">
-        <p className="eyebrow">Indie Android studio</p>
+        <p className="eyebrow">Indie Android &amp; Windows studio</p>
         <h1 className="hero-brand">Zanz Softwares</h1>
         <p className="hero-lead">
           Small apps built for real use — arcade sessions at home, scorekeeping
-          on the range, peak challenges on the trail, and whatever comes next.
+          on the range, peak challenges on the trail, and desktop tools for
+          running a small service business.
         </p>
         <div className="hero-actions">
           <button
@@ -48,8 +49,8 @@ export function HomePage() {
       <section id="apps" className="apps">
         <h2>Apps</h2>
         <p className="section-lead">
-          Each listing has a short overview, privacy policy, and Play Store link
-          when available.
+          Each listing has a short overview, privacy policy, and a Google Play
+          or itch.io link when available.
         </p>
         <ul className="card-grid">
           {apps.map((app) => (
