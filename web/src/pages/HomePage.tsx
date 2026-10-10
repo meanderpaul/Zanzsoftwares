@@ -75,7 +75,11 @@ export function HomePage() {
                   {privacyLink(app)}
                   {deleteLink(app)}
                 </div>
-                <PlayButton url={app.playStoreUrl} closedTesting={app.closedTesting} />
+                <PlayButton
+                  url={app.playStoreUrl}
+                  closedTesting={app.closedTesting}
+                  itchUrl={app.itchUrl}
+                />
               </div>
             </li>
           ))}

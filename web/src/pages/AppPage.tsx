@@ -37,7 +37,11 @@ export function AppPage() {
         ))}
       </ul>
       <div className="page-actions">
-        <PlayButton url={app.playStoreUrl} closedTesting={app.closedTesting} />
+        <PlayButton
+          url={app.playStoreUrl}
+          closedTesting={app.closedTesting}
+          itchUrl={app.itchUrl}
+        />
         {!hasPrivacyPolicy(app) ? null : app.privacyUrl ? (
           <a
             className="btn btn-ghost"

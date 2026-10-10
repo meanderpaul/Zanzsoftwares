@@ -8,6 +8,8 @@ export type AppInfo = {
   playStoreUrl: string | null
   /** When true and there is no public listing yet, the CTA reads "In closed testing" */
   closedTesting?: boolean
+  /** itch.io download page; shown instead of the Play CTA when there is no Play listing */
+  itchUrl?: string
   /** External privacy policy URL; when omitted the site renders privacy/<slug>.md */
   privacyUrl?: string
   /** When true, the catalog links to /#/delete/<slug> for account deletion */
@@ -69,17 +71,20 @@ export const apps: AppInfo[] = [
     initials: 'SA',
   },
   {
-    slug: 'pest-control-crm',
-    name: 'Pest Control CRM',
-    tagline: 'Customers, jobs, and service visits for pest control crews.',
+    slug: 'pest-control-customer-manager',
+    name: 'Pest Control Customer Manager',
+    tagline: 'Recurring customers, service zones, and visit history for Windows.',
     description:
-      'Keep customer records, schedule recurring treatments, and log every service visit so technicians and the office stay on the same page.',
+      'Keep your recurring customer database in one place — details, service zones, visit frequency, and service history — so you can batch nearby jobs into a single day and stay on schedule. A local Windows 10/11 app: your data stays on your PC, no account or cloud required. The free demo is limited to 50 customers with no time limit.',
     features: [
-      'Customer and property records',
-      'Job scheduling and recurring service plans',
-      'Service visit notes and history',
+      'Customer records with search, call logs, and a leads engine',
+      'Service zones that group due work so you finish an area in one pass',
+      'Service frequency tracking and a service history log',
+      'Invoice and payment tracking',
+      'Financial snapshot with projected annual service revenue',
     ],
     playStoreUrl: null,
+    itchUrl: 'https://meanderpaul.itch.io/pest-control-customer-manager',
     accent: '#8a5a1f',
     initials: 'PC',
   },
