@@ -1,9 +1,11 @@
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { apps, type AppInfo } from '../data/apps'
+import { hasPrivacyPolicy } from '../data/privacy'
 import { PlayButton } from '../components/PlayButton'
 
 function privacyLink(app: AppInfo) {
+  if (!hasPrivacyPolicy(app)) return null
   if (app.privacyUrl) {
     return (
       <a href={app.privacyUrl} target="_blank" rel="noreferrer">
@@ -73,7 +75,7 @@ export function HomePage() {
                   {privacyLink(app)}
                   {deleteLink(app)}
                 </div>
-                <PlayButton url={app.playStoreUrl} />
+                <PlayButton url={app.playStoreUrl} closedTesting={app.closedTesting} />
               </div>
             </li>
           ))}

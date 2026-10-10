@@ -1,14 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { getApp } from '../data/apps'
-import classicsArcade from '@privacy/classics-arcade.md?raw'
-import archerypal from '@privacy/archerypal.md?raw'
-import stratoAltus from '@privacy/strato-altus.md?raw'
-
-const privacyBySlug: Record<string, string> = {
-  'classics-arcade': classicsArcade,
-  archerypal: archerypal,
-  'strato-altus': stratoAltus,
-}
+import { privacyBySlug } from '../data/privacy'
 
 function renderMarkdownLite(md: string): string {
   return md

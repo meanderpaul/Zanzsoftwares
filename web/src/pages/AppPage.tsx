@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getApp } from '../data/apps'
+import { hasPrivacyPolicy } from '../data/privacy'
 import { PlayButton } from '../components/PlayButton'
 
 export function AppPage() {
@@ -36,8 +37,8 @@ export function AppPage() {
         ))}
       </ul>
       <div className="page-actions">
-        <PlayButton url={app.playStoreUrl} />
-        {app.privacyUrl ? (
+        <PlayButton url={app.playStoreUrl} closedTesting={app.closedTesting} />
+        {!hasPrivacyPolicy(app) ? null : app.privacyUrl ? (
           <a
             className="btn btn-ghost"
             href={app.privacyUrl}
