@@ -25,12 +25,12 @@ npm run build
 
 1. Copy `privacy/_template.md` → `privacy/your-app-slug.md` and fill it in.
 2. Add an entry in `web/src/data/apps.ts`.
-3. Import the markdown in `web/src/pages/PrivacyPage.tsx` and map it in `privacyBySlug`.
+3. Import the markdown in `web/src/data/privacy.ts` and map it in `privacyBySlug`. Apps without a policy yet simply hide the privacy link.
 4. Commit and push.
 
 ### Play Store links
 
-In `web/src/data/apps.ts`, set `playStoreUrl` from `null` to your listing URL when ready. The button switches from “Coming soon” to “Get it on Google Play”.
+In `web/src/data/apps.ts`, set `playStoreUrl` from `null` to your listing URL when ready. The button switches from “Coming soon” to “Get it on Google Play”. Set `closedTesting: true` to show “In closed testing” while the listing is still private.
 
 ## Privacy policies (markdown)
 

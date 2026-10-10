@@ -1,9 +1,11 @@
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { apps, type AppInfo } from '../data/apps'
+import { hasPrivacyPolicy } from '../data/privacy'
 import { PlayButton } from '../components/PlayButton'
 
 function privacyLink(app: AppInfo) {
+  if (!hasPrivacyPolicy(app)) return null
   if (app.privacyUrl) {
     return (
       <a href={app.privacyUrl} target="_blank" rel="noreferrer">
@@ -23,11 +25,12 @@ export function HomePage() {
   return (
     <main>
       <section className="hero">
-        <p className="eyebrow">Indie Android studio</p>
+        <p className="eyebrow">Indie Android &amp; Windows studio</p>
         <h1 className="hero-brand">Zanz Softwares</h1>
         <p className="hero-lead">
           Small apps built for real use — arcade sessions at home, scorekeeping
-          on the range, peak challenges on the trail, and whatever comes next.
+          on the range, peak challenges on the trail, and desktop tools for
+          running a small service business.
         </p>
         <div className="hero-actions">
           <button
@@ -46,8 +49,8 @@ export function HomePage() {
       <section id="apps" className="apps">
         <h2>Apps</h2>
         <p className="section-lead">
-          Each listing has a short overview, privacy policy, and Play Store link
-          when available.
+          Each listing has a short overview, privacy policy, and a Google Play
+          or itch.io link when available.
         </p>
         <ul className="card-grid">
           {apps.map((app) => (
@@ -73,7 +76,11 @@ export function HomePage() {
                   {privacyLink(app)}
                   {deleteLink(app)}
                 </div>
-                <PlayButton url={app.playStoreUrl} />
+                <PlayButton
+                  url={app.playStoreUrl}
+                  closedTesting={app.closedTesting}
+                  itchUrl={app.itchUrl}
+                />
               </div>
             </li>
           ))}
