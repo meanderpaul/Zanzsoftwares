@@ -1,5 +1,9 @@
+export type Category = 'game' | 'app' | 'tool'
+
 export type AppInfo = {
   slug: string
+  /** Which homepage section the listing appears in */
+  category: Category
   name: string
   tagline: string
   description: string
@@ -27,6 +31,7 @@ export type AppInfo = {
 export const apps: AppInfo[] = [
   {
     slug: 'side-hustle-empire',
+    category: 'game',
     name: 'Side Hustle Empire',
     tagline: 'Idle tycoon: tap, hire, go public.',
     description:
@@ -44,6 +49,7 @@ export const apps: AppInfo[] = [
   },
   {
     slug: 'classics-arcade',
+    category: 'game',
     name: 'Classics Arcade',
     tagline: 'Retro arcade games in one pocket-sized cabinet.',
     description:
@@ -61,6 +67,7 @@ export const apps: AppInfo[] = [
   },
   {
     slug: 'color-flow',
+    category: 'game',
     name: 'Color Flow',
     tagline: 'Fire colored shooters to clear the board.',
     description:
@@ -73,6 +80,7 @@ export const apps: AppInfo[] = [
   },
   {
     slug: 'barcode-monsters',
+    category: 'game',
     name: 'Barcode Monsters',
     tagline: 'Tune daily signals to crack gateway codes.',
     description:
@@ -90,6 +98,7 @@ export const apps: AppInfo[] = [
   },
   {
     slug: 'archerypal',
+    category: 'app',
     name: 'Archerypal',
     tagline: 'Peer-to-peer archery scoring on the field.',
     description:
@@ -107,6 +116,7 @@ export const apps: AppInfo[] = [
   },
   {
     slug: 'strato-altus',
+    category: 'app',
     name: 'Strato Altus',
     tagline: 'Hiking and peak challenges with your community.',
     description:
@@ -124,6 +134,7 @@ export const apps: AppInfo[] = [
   },
   {
     slug: 'pest-control-customer-manager',
+    category: 'tool',
     name: 'Pest Control Customer Manager',
     tagline: 'Recurring customers, service zones, and visit history for Windows.',
     description:
@@ -142,6 +153,7 @@ export const apps: AppInfo[] = [
   },
   {
     slug: 'workforce-hub',
+    category: 'tool',
     name: 'WorkForce Hub',
     tagline: 'Employees, time clock, time off, and payroll for Windows.',
     description:
@@ -160,6 +172,7 @@ export const apps: AppInfo[] = [
   },
   {
     slug: 'inventory-management',
+    category: 'tool',
     name: 'Inventory Management',
     tagline: 'Know what you have, where it is, and when to reorder.',
     description:
@@ -172,6 +185,24 @@ export const apps: AppInfo[] = [
     playStoreUrl: null,
     accent: '#2c6e7a',
     initials: 'IM',
+  },
+]
+
+export const categories: { id: Category; title: string; lead: string }[] = [
+  {
+    id: 'game',
+    title: 'Games',
+    lead: 'Play in the browser on PlayDrop, on your phone or computer. No install needed.',
+  },
+  {
+    id: 'app',
+    title: 'Apps',
+    lead: 'Android apps for getting outside: scoring on the archery range and logging hikes and summits.',
+  },
+  {
+    id: 'tool',
+    title: 'Tools',
+    lead: 'Software for running a small service business: customers and service zones, your crew and payroll, and stock on hand.',
   },
 ]
 

@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { getApp } from '../data/apps'
+import { categories, getApp } from '../data/apps'
 import { hasPrivacyPolicy } from '../data/privacy'
 import { PlayButton } from '../components/PlayButton'
 
@@ -23,7 +23,8 @@ export function AppPage() {
       style={{ '--card-accent': app.accent } as CSSProperties}
     >
       <p className="crumb">
-        <Link to="/">Home</Link> / {app.name}
+        <Link to="/">Home</Link> /{' '}
+        {categories.find((c) => c.id === app.category)?.title} / {app.name}
       </p>
       <div className="detail-banner">
         <span className="card-initials">{app.initials}</span>

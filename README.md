@@ -24,7 +24,7 @@ npm run build
 ### Add another app
 
 1. Copy `privacy/_template.md` → `privacy/your-app-slug.md` and fill it in.
-2. Add an entry in `web/src/data/apps.ts`.
+2. Add an entry in `web/src/data/apps.ts` with its `category`: `'game'` (Games), `'app'` (Apps) or `'tool'` (Tools). The homepage groups listings into those sections; their headings and intros are in `categories` in the same file.
 3. Import the markdown in `web/src/data/privacy.ts` and map it in `privacyBySlug`. Apps without a policy yet simply hide the privacy link.
 4. Commit and push.
 
