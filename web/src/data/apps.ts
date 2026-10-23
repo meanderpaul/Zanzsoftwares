@@ -10,6 +10,10 @@ export type AppInfo = {
   closedTesting?: boolean
   /** itch.io download page; shown instead of the Play CTA when there is no Play listing */
   itchUrl?: string
+  /** PlayDrop page where the game plays in the browser */
+  playdropUrl?: string
+  /** Short status label, e.g. "Early access" */
+  status?: string
   /** External privacy policy URL; when omitted the site renders privacy/<slug>.md */
   privacyUrl?: string
   /** When true, the catalog links to /#/delete/<slug> for account deletion */
@@ -22,19 +26,67 @@ export type AppInfo = {
 
 export const apps: AppInfo[] = [
   {
+    slug: 'side-hustle-empire',
+    name: 'Side Hustle Empire',
+    tagline: 'Idle tycoon: tap, hire, go public.',
+    description:
+      'Tap Pitch to earn cash, buy side hustles from a Freelance Gig up to a Unicorn that keep earning while you are away, and take your company public to restart with shares that boost all income. Ride out market crashes, go viral for double income, and claim a daily streak bonus. Plays in the browser on phone or desktop; progress saves on your device.',
+    features: [
+      'Eight hustles, each doubling output every 25 owned',
+      'IPO prestige with permanent income shares',
+      'Offline earnings for up to 4 hours',
+      'Random market crashes and daily streak bonuses',
+    ],
+    playStoreUrl: null,
+    playdropUrl: 'https://www.playdrop.ai/@zanz/side-hustle-empire',
+    accent: '#c9932a',
+    initials: 'SH',
+  },
+  {
     slug: 'classics-arcade',
     name: 'Classics Arcade',
     tagline: 'Retro arcade games in one pocket-sized cabinet.',
     description:
-      'A collection of classic arcade-style games for quick sessions on Android. Progress and high scores stay on your device.',
+      'Re-imagined retro classics. Shrinking Arena Snake is playable now in the browser: steer by swiping while the walls close in, with three lives per run. More arcade games are in development, along with an Android release. Progress and high scores stay on your device.',
     features: [
-      'Multiple classic-style mini-games',
-      'Local high scores and progress',
-      'Optional ads with a clean play-first layout',
+      'Shrinking Arena Snake, playable now',
+      'Swipe controls built for phones',
+      'Local high scores and personal best',
+      'More classic-style games in development',
     ],
     playStoreUrl: null,
+    playdropUrl: 'https://www.playdrop.ai/@zanz/classics-arcade',
     accent: '#b3541e',
     initials: 'CA',
+  },
+  {
+    slug: 'color-flow',
+    name: 'Color Flow',
+    tagline: 'Fire colored shooters to clear the board.',
+    description:
+      'Tap to fire colored shooters and clear matching blocks from a full board. A quick puzzle game that plays in the browser on phone or desktop.',
+    features: ['Tap-to-fire color matching', 'Quick sessions', 'Plays in any modern browser'],
+    playStoreUrl: null,
+    playdropUrl: 'https://www.playdrop.ai/@zanz/color-flow',
+    accent: '#2f7fc1',
+    initials: 'CF',
+  },
+  {
+    slug: 'barcode-monsters',
+    name: 'Barcode Monsters',
+    tagline: 'Tune daily signals to crack gateway codes.',
+    description:
+      'An early build of a monster-collecting game. Today you lock five daily signals by tuning frequency and phase, and each lock reveals a gateway code. Barcode scanning, monsters and battles are still in development.',
+    features: [
+      'Five new signals every day',
+      'Frequency and phase tuning puzzle',
+      'Cloud save',
+    ],
+    playStoreUrl: null,
+    playdropUrl: 'https://www.playdrop.ai/@zanz/barcode-monsters',
+    status: 'Early access',
+    accent: '#1b8fa6',
+    initials: 'BM',
   },
   {
     slug: 'archerypal',

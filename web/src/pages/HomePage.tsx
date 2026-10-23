@@ -25,12 +25,12 @@ export function HomePage() {
   return (
     <main>
       <section className="hero">
-        <p className="eyebrow">Indie Android &amp; Windows studio</p>
+        <p className="eyebrow">Indie games &amp; apps for web, Android and Windows</p>
         <h1 className="hero-brand">Zanz Softwares</h1>
         <p className="hero-lead">
-          Small apps built for real use — arcade sessions at home, scorekeeping
-          on the range, peak challenges on the trail, and desktop tools for
-          running a small service business.
+          Small games and apps built for real use: browser games you can play
+          right now, scorekeeping on the range, peak challenges on the trail,
+          and desktop tools for running a small service business.
         </p>
         <div className="hero-actions">
           <button
@@ -40,17 +40,26 @@ export function HomePage() {
               document.getElementById('apps')?.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            See our apps
+            See our games &amp; apps
           </button>
+          <a
+            className="btn btn-ghost"
+            href="https://www.playdrop.ai/@zanz"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Our games on PlayDrop
+          </a>
         </div>
         <div className="hero-wash" aria-hidden="true" />
       </section>
 
       <section id="apps" className="apps">
-        <h2>Apps</h2>
+        <h2>Games &amp; apps</h2>
         <p className="section-lead">
-          Each listing has a short overview, privacy policy, and a Google Play
-          or itch.io link when available.
+          Each listing has a short overview and a way to get it: play in the
+          browser on PlayDrop, or a Google Play or itch.io link when available.
+          Privacy policies are linked where an app has one.
         </p>
         <ul className="card-grid">
           {apps.map((app) => (
@@ -69,6 +78,7 @@ export function HomePage() {
               <div className="card-body">
                 <h3>
                   <Link to={`/apps/${app.slug}`}>{app.name}</Link>
+                  {app.status ? <span className="status-pill">{app.status}</span> : null}
                 </h3>
                 <p>{app.tagline}</p>
                 <div className="card-links">
@@ -80,6 +90,7 @@ export function HomePage() {
                   url={app.playStoreUrl}
                   closedTesting={app.closedTesting}
                   itchUrl={app.itchUrl}
+                  playdropUrl={app.playdropUrl}
                 />
               </div>
             </li>

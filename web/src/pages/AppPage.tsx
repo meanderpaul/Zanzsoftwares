@@ -28,7 +28,10 @@ export function AppPage() {
       <div className="detail-banner">
         <span className="card-initials">{app.initials}</span>
       </div>
-      <h1>{app.name}</h1>
+      <h1>
+        {app.name}
+        {app.status ? <span className="status-pill">{app.status}</span> : null}
+      </h1>
       <p className="tagline">{app.tagline}</p>
       <p>{app.description}</p>
       <ul className="feature-list">
@@ -41,6 +44,7 @@ export function AppPage() {
           url={app.playStoreUrl}
           closedTesting={app.closedTesting}
           itchUrl={app.itchUrl}
+          playdropUrl={app.playdropUrl}
         />
         {!hasPrivacyPolicy(app) ? null : app.privacyUrl ? (
           <a

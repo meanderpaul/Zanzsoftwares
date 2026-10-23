@@ -6,7 +6,7 @@ Public site and privacy policies for apps published by Zanz Softwares.
 
 ## Website
 
-Small React site in [`web/`](web/) — app catalog, detail pages, privacy pages, and Google Play CTAs (Coming soon until a listing URL is set).
+Small React site in [`web/`](web/) — game and app catalog, detail pages, privacy pages, and store CTAs: "Play in browser" for PlayDrop games, Google Play, or itch.io.
 
 ```bash
 cd web
@@ -31,6 +31,17 @@ npm run build
 ### Play Store links
 
 In `web/src/data/apps.ts`, set `playStoreUrl` from `null` to your listing URL when ready. The button switches from “Coming soon” to “Get it on Google Play”. Set `closedTesting: true` to show “In closed testing” while the listing is still private.
+
+### PlayDrop links
+
+Browser games live on PlayDrop under [@zanz](https://www.playdrop.ai/@zanz). Set `playdropUrl` in `web/src/data/apps.ts` to the game's page (use the link without `?v=`, which always opens the latest published version). The card then shows a **Play in browser** button, and the Google Play “Coming soon” chip is hidden unless `closedTesting` is set. Use `status` (e.g. `'Early access'`) for a small label next to the name.
+
+| Game | PlayDrop |
+|------|----------|
+| Side Hustle Empire | https://www.playdrop.ai/@zanz/side-hustle-empire |
+| Classics Arcade (Shrinking Arena Snake) | https://www.playdrop.ai/@zanz/classics-arcade |
+| Color Flow | https://www.playdrop.ai/@zanz/color-flow |
+| Barcode Monsters (early access) | https://www.playdrop.ai/@zanz/barcode-monsters |
 
 ## Privacy policies (markdown)
 

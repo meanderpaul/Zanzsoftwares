@@ -260,6 +260,34 @@ p {
   align-self: flex-start;
 }
 
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.card-body .cta-group {
+  margin-top: auto;
+}
+
+.card-body .cta-group .btn {
+  margin-top: 0;
+}
+
+.status-pill {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  vertical-align: middle;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
