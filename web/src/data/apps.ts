@@ -225,6 +225,7 @@ export const apps: AppInfo[] = [
       'Optional phone access on your local Wi-Fi',
     ],
     playStoreUrl: null,
+    itchUrl: 'https://meanderpaul.itch.io/inventory-management',
     accent: '#2c6e7a',
     initials: 'IM',
   },
