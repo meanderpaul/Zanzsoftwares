@@ -46,6 +46,7 @@ export function AppPage() {
           closedTesting={app.closedTesting}
           itchUrl={app.itchUrl}
           playdropUrl={app.playdropUrl}
+          windows={app.category === 'tool'}
         />
         {!hasPrivacyPolicy(app) ? null : app.privacyUrl ? (
           <a

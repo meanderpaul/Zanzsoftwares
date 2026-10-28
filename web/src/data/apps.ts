@@ -133,6 +133,26 @@ export const apps: AppInfo[] = [
     initials: 'SA',
   },
   {
+    slug: 'business-all-in-one',
+    category: 'tool',
+    name: 'Business All-in-One',
+    tagline: 'CRM, sales, crew, payroll, and inventory in one Windows program.',
+    description:
+      'The whole Zanz Business Suite in a single desktop app: customers and service, a sales pipeline, employees and payroll, inventory, and reports, all behind one dashboard. It works offline, keeps everything in a local database on your PC, and adapts its labels and lists to your trade with industry packs for pest control, plumbing, and general service work. Commissions from completed jobs flow straight into payroll, and stock is deducted automatically when a visit is logged.',
+    features: [
+      'Dashboard, CRM, Sales, Workforce, Inventory, and Reports in one window',
+      'Industry packs for pest control, plumbing, and general service',
+      'Job commissions pushed directly into payroll',
+      'Service visits deduct the materials they use from stock',
+      'Phone Access: techs scan a QR code to use inventory from their phone on your Wi-Fi',
+      'Sales pipeline that syncs between desks on your local network',
+    ],
+    playStoreUrl: null,
+    status: 'In development',
+    accent: '#a0442c',
+    initials: 'BA',
+  },
+  {
     slug: 'pest-control-customer-manager',
     category: 'tool',
     name: 'Pest Control Customer Manager',
@@ -150,6 +170,25 @@ export const apps: AppInfo[] = [
     itchUrl: 'https://meanderpaul.itch.io/pest-control-customer-manager',
     accent: '#8a5a1f',
     initials: 'PC',
+  },
+  {
+    slug: 'customer-manager',
+    category: 'tool',
+    name: 'Customer Manager',
+    tagline: 'The Customer Manager for any service trade, set up by industry pack.',
+    description:
+      'The same customer, service, and accounting tools as Pest Control Customer Manager, built so one app can fit different trades. Pick an industry pack (pest control, plumbing, or general service) and the app loads matching service types, job types, labels, and starter data. Pending follow-ups from the call log are flagged on the customer list and dashboard so nothing slips. A local Windows app; your data stays on your PC.',
+    features: [
+      'Industry packs for pest control, plumbing, and general service',
+      'Customers, service zones, recurring visits, and service history',
+      'Accounting, invoices, and a project tracker with commissions',
+      'Follow-up alerts from the call log',
+      'Excel import and export',
+    ],
+    playStoreUrl: null,
+    status: 'In development',
+    accent: '#7a6a1f',
+    initials: 'CM',
   },
   {
     slug: 'workforce-hub',
@@ -173,18 +212,39 @@ export const apps: AppInfo[] = [
   {
     slug: 'inventory-management',
     category: 'tool',
-    name: 'Inventory Management',
-    tagline: 'Know what you have, where it is, and when to reorder.',
+    name: 'Inventory Manager',
+    tagline: 'Shop stock, truck loads, and purchase orders for Windows.',
     description:
-      'Track stock levels across items and locations, record what comes in and goes out, and spot low inventory before it becomes a problem.',
+      'Desktop inventory for pest control and field-service businesses: chemicals, bait, traps, tools, and supplies in the shop, on service vehicles, and in the field. Track stock with reorder levels, load and unload trucks, run purchase orders, and see monthly usage to plan reorders. Field techs on the same Wi-Fi can scan a QR code and use stock from their phone with no app to install. Runs on its own, or beside Pest Control Customer Manager to deduct materials automatically when a visit is logged. No cloud account or subscription.',
     features: [
-      'Item catalog with stock levels',
-      'Stock in / stock out logging',
-      'Low-stock alerts',
+      'Shop stock with SKUs, unit costs, reorder levels, and valuation',
+      'Vehicle loads: assign, return, and use stock on the job',
+      'Purchase orders with partial and full receiving',
+      'Monthly usage and purchase charts for planning',
+      'Full movement history and CSV export',
+      'Optional phone access on your local Wi-Fi',
     ],
     playStoreUrl: null,
     accent: '#2c6e7a',
     initials: 'IM',
+  },
+  {
+    slug: 'lanledger',
+    category: 'tool',
+    name: 'LanLedger',
+    tagline: 'A sales pipeline that syncs between desks with no server.',
+    description:
+      'A peer-to-peer CRM for an in-house sales floor. Each desk keeps its own copy in a local database and syncs leads and deals with the other desks on your network, so there is no central server to run. Log a walk-in lead before there is a product, move it through qualified, proposal, and negotiation, then mark it won or lost. Opens in its own window with no browser address bar.',
+    features: [
+      'Lead-to-close pipeline: qualified, proposal, negotiation, won or lost',
+      'Desks sync directly with each other on the local network',
+      'Add and name desks like Showroom or Receiving',
+      'Works with no internet and no hosted server',
+    ],
+    playStoreUrl: null,
+    status: 'In development',
+    accent: '#4a5a6e',
+    initials: 'LL',
   },
 ]
 
@@ -202,7 +262,7 @@ export const categories: { id: Category; title: string; lead: string }[] = [
   {
     id: 'tool',
     title: 'Tools',
-    lead: 'Software for running a small service business: customers and service zones, your crew and payroll, and stock on hand.',
+    lead: 'The Zanz Business Suite: Windows software for running a small service business, as separate programs or all in one. Customers and service zones, sales, your crew and payroll, and stock on hand.',
   },
 ]
 

@@ -5,6 +5,8 @@ type Props = {
   closedTesting?: boolean
   itchUrl?: string
   playdropUrl?: string
+  /** Windows tools say "Coming soon for Windows" instead of Google Play */
+  windows?: boolean
 }
 
 /**
@@ -13,7 +15,7 @@ type Props = {
  * "Closed testing" only shows when there is no other way to get the app yet,
  * or when the app is in closed testing.
  */
-export function PlayButton({ url, closedTesting, itchUrl, playdropUrl }: Props) {
+export function PlayButton({ url, closedTesting, itchUrl, playdropUrl, windows }: Props) {
   const playdrop = playdropUrl ? (
     <a className="btn btn-play" href={playdropUrl} target="_blank" rel="noreferrer">
       Play in browser
@@ -36,7 +38,11 @@ export function PlayButton({ url, closedTesting, itchUrl, playdropUrl }: Props) 
   } else if (closedTesting || !playdrop) {
     store = (
       <span className="btn btn-play btn-soon" aria-disabled="true">
-        {closedTesting ? 'In closed testing on Google Play' : 'Coming soon on Google Play'}
+        {closedTesting
+          ? 'In closed testing on Google Play'
+          : windows
+            ? 'Coming soon for Windows'
+            : 'Coming soon on Google Play'}
       </span>
     )
   }
