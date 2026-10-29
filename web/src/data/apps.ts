@@ -153,6 +153,24 @@ export const apps: AppInfo[] = [
     initials: 'BA',
   },
   {
+    slug: 'zanz-pestpro',
+    category: 'tool',
+    name: 'Zanz PestPro',
+    tagline: 'Pest control business software for Windows — Microsoft Store edition.',
+    description:
+      'Business All-in-One set up for pest control and sold as a monthly subscription on the Microsoft Store. Customers and service routes, bait stations, jobs and commissions, crew time clock and payroll, shop and truck inventory, and reports in one Windows app. Everything is stored on your PC; Microsoft handles billing.',
+    features: [
+      'Customer manager with service zones, routes, and visit history',
+      'Bait station, job, and commission tracking',
+      'Crew time clock, time off, and payroll',
+      'Shop and truck inventory with phone access on your Wi-Fi',
+    ],
+    playStoreUrl: null,
+    status: 'Coming to Microsoft Store',
+    accent: '#147a4a',
+    initials: 'PP',
+  },
+  {
     slug: 'pest-control-customer-manager',
     category: 'tool',
     name: 'Pest Control Customer Manager',
